@@ -13,7 +13,7 @@ public class JogoDaForca {
             palavraoculta[i] = '_';
         }
 
-        int tentativas = 6;
+        int tentativas = 3;
         boolean venceu = false;
 
         while (tentativas > 0 && !venceu) {
@@ -36,18 +36,23 @@ public class JogoDaForca {
                 System.out.println("Letra incorreta!");
             } else {
                 System.out.println("Você acertou uma letra!");
+                
             }
 
             // Verifica vitória
             if (new String(palavraoculta).equals(palavrasecreta)) {
                 venceu = true;
+                break;
+                
+                
             }
         }
 
         if (venceu) {
-            System.out.println("\n🎉 Parabéns! Você acertou a palavra: " + palavrasecreta);
+            System.out.println(Arrays.toString(palavraoculta));
+            System.out.println("Parabéns! Você venceu! A palavra secreta era: " + palavrasecreta);
         } else {
-            System.out.println("\n💀 Fim de jogo! A palavra era: " + palavrasecreta);
+            System.out.println("Você perdeu! A palavra era: " + palavrasecreta);
         }
 
         scanner.close();
